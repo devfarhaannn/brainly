@@ -89,6 +89,7 @@ app.get("/api/v1/content", userMiddleware, async (req, res) => {
         content
     })
 })
+
 app.delete("/api/v1/content", userMiddleware, async (req, res) => {
     const contentId = req.body.contentId
     ContentModel.deleteMany({
@@ -101,6 +102,7 @@ app.delete("/api/v1/content", userMiddleware, async (req, res) => {
         message: "deleted"
     })
 })
+
 app.post("/api/v1/brain/share", userMiddleware, async (req, res) => {
     const share = req.body.share
 
@@ -135,9 +137,8 @@ app.post("/api/v1/brain/share", userMiddleware, async (req, res) => {
             message: "Removed Link"
         })
     }
-
-
 })
+
 app.get("/api/v1/brain/:shareLink", async (req, res) => {
     const hash = req.params.shareLink
 
@@ -168,7 +169,5 @@ app.get("/api/v1/brain/:shareLink", async (req, res) => {
         content: content
     })
 })
-
-
 
 app.listen(3000)
