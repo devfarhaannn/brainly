@@ -16,9 +16,9 @@ app.use(express.json())
 
 app.post("/api/v1/signup", async (req, res) => {
     //Zod validation // hashed pass
-    const username = req.body.username
-    const password = req.body.password
-
+    const {username,password} = req.body
+   
+   
     try {
         await UserModel.create({
             username: username,

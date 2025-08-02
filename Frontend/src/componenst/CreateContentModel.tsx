@@ -9,12 +9,12 @@ enum ContentType{
     YouTube = "youtube",
     Twitter = "twitter",
 }
-// interface CreateModelContentProps {
-//   open: boolean;
-//   onClose: () => void;
-// }
+interface CreateModelContentProps {
+  open: boolean;
+  onClose: () => void;
+}
 
-export function CreateModelContent({open, onClose}) {
+export function CreateModelContent({open, onClose}:CreateModelContentProps) {
     const titleRef = useRef<HTMLInputElement>(null)
     const linkRef = useRef<HTMLInputElement>(null)
     const [type, setType] = useState(ContentType.YouTube)
@@ -64,7 +64,7 @@ export function CreateModelContent({open, onClose}) {
            }}/>
            </div>
            <div className=" flex justify-center" >
-            <Button onClick={addContent} variant="primary" text="Submit"/>
+            <Button onClick={addContent} variant="primary" text="Submit"   />
            </div>
           </span>
           </div>
